@@ -1,10 +1,37 @@
-# RPI Sharing WiFi
+# RPI Sharing WiFi with ethernet connected equipmet
 ```
          ---------------------
   PC --> |eth0   RPI4    wifi| ---> internet
          ---------------------
 ```
+I have used this in an instance where my fixed internet connection
+went down and I wanted my ordinary router to still work and be able to use
+the internet connection of my mobile phone.
 
+```
+      ----------------
+      | Internal lan |
+      ----------------
+             |
+      ----------------
+      |    Router    |
+      ----------------
+             |
+      ----------------
+      | Raspberry Pi |
+      ----------------
+             |
+          - wifi -
+
+      ----------------
+      | Mobile Phone |
+      ----------------
+             |
+           - 4G -
+
+      ----------------
+      |   Internet   |
+``` 
 * Add `denyinterfaces eth0` to `/etc/dhcpcd.conf`
 * Set up static ip using `/etc/network/interfaces.d/eth0`
 ```
